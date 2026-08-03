@@ -22,7 +22,7 @@ const projects = [
     description:
       "Scrapes the NIE parent portal and provides a dashboard with an SGPA planner to strategize your semester-end exams.",
     tech: ["TypeScript", "React", "Puppeteer", "Docker"],
-    liveUrl: "https://gradebuddy.onrender.com",
+    liveUrl: "https://gradebuddy.bitwise-adi.dev",
     githubUrl: "https://github.com/bitwise-adi/GradeBuddy",
     featured: true,
   },
