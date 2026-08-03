@@ -472,7 +472,7 @@ body::after {
 /* ── About / Bento Grid ────────────────────────────────────── */
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
   margin-top: var(--space-10);
 }
@@ -483,6 +483,8 @@ body::after {
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   transition: border-color var(--transition-base);
+  display: flex;
+  flex-direction: column;
 }
 
 .about__card:hover {
@@ -531,21 +533,18 @@ body::after {
   background: var(--accent-1-glow);
 }
 
-.about__interests {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
+.about__skill-pill--domain {
+  border-color: rgba(124, 58, 237, 0.3);
+  color: var(--text-primary);
 }
 
-.about__interest-tag {
-  font-size: var(--text-sm);
-  padding: var(--space-2) var(--space-4);
-  background: var(--accent-1-glow);
-  border-radius: var(--radius-full);
-  color: var(--accent-1-light);
+.about__skill-pill--domain:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-2-light);
+  background: var(--accent-2-glow);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about__grid {
     grid-template-columns: 1fr;
   }

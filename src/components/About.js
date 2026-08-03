@@ -61,10 +61,11 @@ export default function About() {
           <p className="about__bio-text">
             {siteConfig.bio} I&apos;m drawn to projects that sit at the intersection
             of practical utility and technical curiosity — whether that&apos;s
-            scraping a college portal to plan exam strategy, building encrypted
-            communication systems, or training ML models to detect ransomware.
-            I like building things that solve real problems, even if the problem
-            is just &quot;I wanted to understand how this works.&quot;
+            scraping a university portal to plan semester exam strategies, building
+            encrypted real-time systems, or deploying ML threat classifiers.
+            I like building things that solve real problems, combining strong
+            engineering fundamentals with modern AI-driven velocity to go from idea
+            to production with speed and precision.
           </p>
         </motion.div>
 
@@ -122,17 +123,34 @@ export default function About() {
               </motion.span>
             ))}
           </motion.div>
+        </motion.div>
 
-          <p className="about__card-label" style={{ marginTop: "1.5rem" }}>
-            Domains
-          </p>
-          <div className="about__interests">
-            {domains.map((d) => (
-              <span key={d.name} className="about__interest-tag">
-                {d.name}
-              </span>
+        {/* Domains & Specializations */}
+        <motion.div
+          className="about__card"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <p className="about__card-label">Domains & Architecture</p>
+          <motion.div
+            className="about__skills-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {domains.map((skill) => (
+              <motion.span
+                key={skill.name}
+                className="about__skill-pill about__skill-pill--domain"
+                variants={itemVariants}
+              >
+                {skill.name}
+              </motion.span>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

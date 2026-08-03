@@ -47,33 +47,33 @@ const projects = [
     featured: true,
   },
   {
-    name: "BuildFolio",
-    slug: "buildfolio",
+    name: "RansomGuard.ai",
+    slug: "ransomguard-ai",
     description:
-      "A 100% client-side portfolio generator. Build, preview, and export personal websites directly in your browser.",
-    tech: ["JavaScript", "HTML/CSS", "Vanilla"],
-    liveUrl: "https://bitwise-adi.github.io/BuildFolio/",
-    githubUrl: "https://github.com/bitwise-adi/BuildFolio",
-    featured: false,
-  },
-  {
-    name: "Encrypted Chat",
-    slug: "encrypted-chat",
-    description:
-      "End-to-end encrypted multi-user chat application using RSA cryptography and WebSockets.",
-    tech: ["Python", "WebSockets", "RSA", "CustomTkinter"],
+      "ML-powered network threat classification system built with Clean Architecture, 6 GoF design patterns for runtime model switching, and a FastAPI analytics dashboard.",
+    tech: ["Python", "FastAPI", "XGBoost", "Random Forest", "Chart.js"],
     liveUrl: null,
-    githubUrl: "https://github.com/bitwise-adi/encrypted-chat-app",
+    githubUrl: "https://github.com/bitwise-adi/ranDetect",
     featured: true,
   },
   {
-    name: "ranDetect",
-    slug: "randetect",
+    name: "NOVA",
+    slug: "nova",
     description:
-      "ML-based ransomware classifier that categorizes samples into 10 attack types using RandomForest and XGBoost.",
-    tech: ["Python", "Scikit-learn", "XGBoost", "Vanilla JS"],
+      "Multi-client real-time chat application with RSA-based end-to-end encryption, dynamic public key exchange, and multithreaded socket networking.",
+    tech: ["Python", "Socket Programming", "RSA", "CustomTkinter"],
     liveUrl: null,
-    githubUrl: "https://github.com/bitwise-adi/ranDetect",
+    githubUrl: "https://github.com/bitwise-adi/encrypted-chat-app",
+    featured: false,
+  },
+  {
+    name: "BuildFolio",
+    slug: "buildfolio",
+    description:
+      "Zero-backend client-side portfolio generator. Build, preview in real time with dark mode, and export deployable websites directly from the browser.",
+    tech: ["JavaScript", "HTML/CSS", "LocalStorage"],
+    liveUrl: "https://bitwise-adi.github.io/BuildFolio/",
+    githubUrl: "https://github.com/bitwise-adi/BuildFolio",
     featured: false,
   },
 ];

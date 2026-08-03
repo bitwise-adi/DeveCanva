@@ -10,13 +10,14 @@ const siteConfig = {
   // ── Personal Info ──────────────────────────────────────────
   name: "Aditya Raj",
   handle: "bitwise-adi",
-  bio: "Developer & builder. I ship products, break things to learn, and write about what I discover.",
-  shortBio: "Building things that live on the internet.",
+  bio: "Developer & builder. I leverage modern AI workflows and engineering discipline to architect, build, and ship products at high velocity.",
+  shortBio: "Building & shipping at the speed of AI.",
   greeting: "Hey, I'm",
 
   // ── Taglines (rotate in hero) ──────────────────────────────
   taglines: [
     "I build things for the web.",
+    "I leverage AI to ship at high velocity.",
     "I break things to learn.",
     "I write about what I discover.",
     "I ship products that matter.",

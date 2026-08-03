@@ -21,11 +21,14 @@ const skills = [
   // Frameworks & Libraries
   { name: "React", category: "framework" },
   { name: "Next.js", category: "framework" },
+  { name: "FastAPI", category: "framework" },
+  { name: "Django", category: "framework" },
   { name: "Node.js", category: "framework" },
   { name: "Express.js", category: "framework" },
   { name: "Framer Motion", category: "framework" },
   { name: "MDX", category: "framework" },
   { name: "Puppeteer", category: "framework" },
+  { name: "Cheerio", category: "framework" },
   { name: "Scikit-learn", category: "framework" },
   { name: "XGBoost", category: "framework" },
   { name: "WebSockets", category: "framework" },
@@ -34,10 +37,13 @@ const skills = [
   // Tools & Platforms
   { name: "Git & GitHub", category: "tool" },
   { name: "Docker", category: "tool" },
+  { name: "Linux / Bash", category: "tool" },
   { name: "Firebase / Firestore", category: "tool" },
+  { name: "MySQL", category: "tool" },
   { name: "Vercel", category: "tool" },
   { name: "Render", category: "tool" },
-  { name: "Linux / Bash", category: "tool" },
+  { name: "Figma", category: "tool" },
+  { name: "VS Code", category: "tool" },
 
   // Domains & Focus Areas
   { name: "Full-Stack Development", category: "domain" },
