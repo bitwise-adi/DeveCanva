@@ -15,24 +15,40 @@ const skills = [
   { name: "Python", category: "language" },
   { name: "Java", category: "language" },
   { name: "C/C++", category: "language" },
-  { name: "HTML/CSS", category: "language" },
+  { name: "SQL", category: "language" },
+  { name: "HTML5 / CSS3", category: "language" },
 
   // Frameworks & Libraries
   { name: "React", category: "framework" },
   { name: "Next.js", category: "framework" },
   { name: "Node.js", category: "framework" },
+  { name: "Express.js", category: "framework" },
+  { name: "Framer Motion", category: "framework" },
+  { name: "MDX", category: "framework" },
+  { name: "Puppeteer", category: "framework" },
+  { name: "Scikit-learn", category: "framework" },
+  { name: "XGBoost", category: "framework" },
+  { name: "WebSockets", category: "framework" },
+  { name: "CustomTkinter", category: "framework" },
 
   // Tools & Platforms
-  { name: "Git", category: "tool" },
+  { name: "Git & GitHub", category: "tool" },
   { name: "Docker", category: "tool" },
-  { name: "Firebase", category: "tool" },
+  { name: "Firebase / Firestore", category: "tool" },
   { name: "Vercel", category: "tool" },
-  { name: "Linux", category: "tool" },
+  { name: "Render", category: "tool" },
+  { name: "Linux / Bash", category: "tool" },
 
-  // Areas
+  // Domains & Focus Areas
+  { name: "Full-Stack Development", category: "domain" },
+  { name: "Frontend Engineering", category: "domain" },
+  { name: "Backend & Systems", category: "domain" },
+  { name: "UI/UX & Design Systems", category: "domain" },
   { name: "Machine Learning", category: "domain" },
-  { name: "Web Scraping", category: "domain" },
-  { name: "Cryptography", category: "domain" },
+  { name: "Web Scraping & Automation", category: "domain" },
+  { name: "Cryptography & E2EE", category: "domain" },
+  { name: "Progressive Web Apps (PWA)", category: "domain" },
+  { name: "Blockchain Systems", category: "domain" },
 ];
 
 export default skills;

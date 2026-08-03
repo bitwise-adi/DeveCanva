@@ -17,6 +17,16 @@
 
 const projects = [
   {
+    name: "DevCanvas",
+    slug: "devcanvas",
+    description:
+      "A high-performance personal developer canvas and portfolio with dynamic MDX blogging, modular data architecture, and smooth motion design.",
+    tech: ["Next.js", "React", "MDX", "Vanilla CSS", "Framer Motion"],
+    liveUrl: "https://www.bitwise-adi.dev",
+    githubUrl: "https://github.com/bitwise-adi/DeveCanva",
+    featured: true,
+  },
+  {
     name: "GradeBuddy",
     slug: "gradebuddy",
     description:
