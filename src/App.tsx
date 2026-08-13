@@ -104,83 +104,96 @@ export const App: React.FC = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* Scroll Progress Bar */}
-      <ScrollProgressBar />
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <SplashLoader key="splash-loader" onFinish={() => setIsLoading(false)} durationMs={1800} />
+        ) : (
+          <motion.div
+            key="main-app"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {/* Scroll Progress Bar */}
+            <ScrollProgressBar />
 
-      {/* Background Canvas */}
-      <ParticleCanvas />
+            {/* Background Canvas */}
+            <ParticleCanvas />
 
-      {/* Header Navigation */}
-      <Navbar
-        currentView={currentView}
-        onOpenResume={() => setIsResumeOpen(true)}
-        onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
-        onNavigateHome={navigateToHome}
-        onNavigateProjects={navigateToProjectsArchive}
-      />
+            {/* Header Navigation */}
+            <Navbar
+              currentView={currentView}
+              onOpenResume={() => setIsResumeOpen(true)}
+              onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
+              onNavigateHome={navigateToHome}
+              onNavigateProjects={navigateToProjectsArchive}
+            />
 
-      {/* Main View Router */}
-      <main>
-        <AnimatePresence mode="wait">
-          {currentView === 'home' && (
-            <motion.div
-              key="home"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Hero onOpenResume={() => setIsResumeOpen(true)} />
-              <About onOpenLightbox={handleOpenLightbox} />
-              <Timeline />
-              <SkillsMatrix />
-              <ProjectsBento
-                onNavigateToProjectsArchive={navigateToProjectsArchive}
-                onSelectCaseStudy={navigateToCaseStudy}
-                onOpenLightbox={handleOpenLightbox}
-              />
-              <Terminal onOpenResume={() => setIsResumeOpen(true)} />
-              <Contact onOpenResume={() => setIsResumeOpen(true)} />
-            </motion.div>
-          )}
+            {/* Main View Router */}
+            <main>
+              <AnimatePresence mode="wait">
+                {currentView === 'home' && (
+                  <motion.div
+                    key="home"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Hero onOpenResume={() => setIsResumeOpen(true)} />
+                    <About onOpenLightbox={handleOpenLightbox} />
+                    <Timeline />
+                    <SkillsMatrix />
+                    <ProjectsBento
+                      onNavigateToProjectsArchive={navigateToProjectsArchive}
+                      onSelectCaseStudy={navigateToCaseStudy}
+                      onOpenLightbox={handleOpenLightbox}
+                    />
+                    <Terminal onOpenResume={() => setIsResumeOpen(true)} />
+                    <Contact onOpenResume={() => setIsResumeOpen(true)} />
+                  </motion.div>
+                )}
 
-          {currentView === 'projects' && (
-            <motion.div
-              key="projects"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Suspense fallback={<div className="min-h-screen pt-32 text-center font-mono text-xs text-[#00ffcc]">Loading archive...</div>}>
-                <ProjectsArchive onSelectCaseStudy={navigateToCaseStudy} />
-              </Suspense>
-            </motion.div>
-          )}
+                {currentView === 'projects' && (
+                  <motion.div
+                    key="projects"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Suspense fallback={<div className="min-h-screen pt-32 text-center font-mono text-xs text-[#00ffcc]">Loading archive...</div>}>
+                      <ProjectsArchive onSelectCaseStudy={navigateToCaseStudy} />
+                    </Suspense>
+                  </motion.div>
+                )}
 
-          {currentView === 'case-study' && (
-            <motion.div
-              key={`case-study-${activeCaseStudyId}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Suspense fallback={<div className="min-h-screen pt-32 text-center font-mono text-xs text-[#00ffcc]">Loading case study...</div>}>
-                <ProjectCaseStudy
-                  projectId={activeCaseStudyId}
-                  onNavigateToProjects={navigateToProjectsArchive}
-                  onNavigateToCaseStudy={navigateToCaseStudy}
-                  onOpenLightbox={handleOpenLightbox}
-                />
-              </Suspense>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </main>
+                {currentView === 'case-study' && (
+                  <motion.div
+                    key={`case-study-${activeCaseStudyId}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Suspense fallback={<div className="min-h-screen pt-32 text-center font-mono text-xs text-[#00ffcc]">Loading case study...</div>}>
+                      <ProjectCaseStudy
+                        projectId={activeCaseStudyId}
+                        onNavigateToProjects={navigateToProjectsArchive}
+                        onNavigateToCaseStudy={navigateToCaseStudy}
+                        onOpenLightbox={handleOpenLightbox}
+                      />
+                    </Suspense>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </main>
 
-      {/* Footer */}
-      <Footer />
+            {/* Footer */}
+            <Footer />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Developer Command Palette (⌘K) */}
       <CommandPalette
@@ -205,13 +218,6 @@ export const App: React.FC = () => {
         currentIndex={lightboxIndex}
         onNavigate={setLightboxIndex}
       />
-
-      {/* Initial Splash Screen Loader */}
-      <AnimatePresence>
-        {isLoading && (
-          <SplashLoader onFinish={() => setIsLoading(false)} durationMs={1800} />
-        )}
-      </AnimatePresence>
     </div>
   );
 };
