@@ -1,19 +1,30 @@
-# ⚡ `<bitwise-adi />` — Interactive Developer Portfolio
+# ⚡ DevCanvas — Interactive Developer Portfolio & Canvas
 
-> High-velocity, cyberpunk-inspired developer portfolio built with React 18, TypeScript, Vite, Tailwind CSS, and Framer Motion. Featuring interactive canvas particles, an embedded CLI terminal, a global command palette (`⌘K`), dynamic project case studies, and smooth micro-animations.
+[![Live Website](https://img.shields.io/badge/Live_Site-www.bitwise--adi.dev-00ffcc?style=for-the-badge&logo=vercel&logoColor=00ffcc)](https://www.bitwise-adi.dev)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-bitwise--adi%2FDeveCanva-8b5cf6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bitwise-adi/DeveCanva)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+
+> High-velocity, cyberpunk-inspired developer portfolio and interactive canvas built with **React 18**, **TypeScript**, **Vite 6**, **Tailwind CSS**, and **Framer Motion**. Featuring interactive particle physics, an embedded CLI terminal state machine, a global command palette (`⌘K`), dynamic project case studies, and smooth micro-animations.
 
 ---
 
-## ✨ Features
+## 🌐 Live Demo & Repository
 
-- 🌌 **Interactive Particle Canvas & ASCII Hero Terminal**: Dynamic visual background with user interaction and a toggleable ASCII terminal header.
-- 💻 **Interactive Embedded CLI Terminal**: Full terminal experience supporting commands like `help`, `about`, `skills`, `projects`, `resume`, `clear`, `matrix`, `sudo`, and `contact`.
-- ⌘ **Global Command Palette (`⌘K`)**: Quick navigation and instant actions accessible anywhere on the site with fuzzy search and keyboard shortcuts.
-- 📦 **Bento Grid & Project Case Studies**: Interactive project showcase featuring filter tags, live demo links, modal case studies, and image lightbox galleries.
-- 🛠️ **Skills Matrix & Interactive Timeline**: Categorized tech stack breakdown with visual mastery indicators and interactive educational milestones.
-- 📄 **Interactive Resume Modal**: In-browser PDF resume viewer with instant download capabilities.
-- 🎨 **Sleek Cyberpunk & Glassmorphism Aesthetics**: Built with tailored dark modes (`#07070d`), vibrant cyan accents (`#00ffcc`), purple glow effects (`#8b5cf6`), and smooth Framer Motion animations.
-- 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices with custom touch navigation.
+- 🔗 **Live Production Site**: [https://www.bitwise-adi.dev](https://www.bitwise-adi.dev)
+- 📦 **GitHub Repository**: [https://github.com/bitwise-adi/DeveCanva](https://github.com/bitwise-adi/DeveCanva)
+
+---
+
+## ✨ Key Features
+
+- 🌌 **Interactive Particle Physics Canvas**: Real-time interactive background canvas with dynamic particle connections, responsive viewport scaling, and mobile performance throttling (`< 768px`).
+- 💻 **Interactive CLI Terminal State Machine**: Full terminal experience with custom CLI commands: `help`, `whoami`, `projects` / `ls`, `experience`, `skills`, `socials`, `contact`, `resume` / `cat resume.pdf`, `neofetch`, `clear`, and `sudo hire-me`.
+- ⌘ **Global Command Palette (`⌘K`)**: Instant modal navigation accessible anywhere on the site with keyboard shortcut listeners (`⌘K` and `/`).
+- 📦 **Bento Grid & Case Study SPA Router**: Filterable project showcase featuring live demo links, modal case studies, and image lightbox galleries with `AnimatePresence` view crossfades.
+- 🛠️ **Skills & Proof Matrix**: Categorized tech stack matrix linking every listed technology directly to shipped project proofs (`LocoMe`, `GradeBuddy`, `RansomGuard.ai`, `NOVA`, `BuildFolio`, `DevCanvas`).
+- 📄 **In-Browser PDF Resume Viewer**: Interactive PDF viewer modal with instant download capabilities (`Aditya_Raj_Resume.pdf`).
+- 🎨 **Glassmorphism & Design Token System**: Dark background (`#07070d`), vibrant cyan accents (`#00ffcc`), purple glow gradients (`#8b5cf6`), and high-performance Tailwind utility classes.
+- ⚡ **Performance & SEO Optimized**: Pre-rendered inline HTML splash spinner, custom SVG Open Graph social preview card (`og-card.svg`), and `React.lazy()` route code-splitting for fast page loads.
 
 ---
 
@@ -21,51 +32,12 @@
 
 | Layer | Technology |
 | :--- | :--- |
-| **Framework** | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
-| **Build Tool** | [Vite 6](https://vitejs.dev/) |
+| **Frontend Framework** | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
+| **Build Tool & Bundler** | [Vite 6](https://vitejs.dev/) |
 | **Styling** | [Tailwind CSS 3](https://tailwindcss.com/) + Custom Glassmorphism & Animations |
-| **Motion & FX** | [Framer Motion 11](https://www.framer.com/motion/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
+| **Motion & Transitions** | [Framer Motion 11](https://www.framer.com/motion/) |
+| **Iconography** | [Lucide React](https://lucide.dev/) |
 | **Utilities** | `clsx` + `tailwind-merge` |
-
----
-
-## 📁 Project Structure
-
-```text
-├── public/                  # Static assets served at root
-│   ├── Aditya_Raj_Resume.pdf   # PDF Resume
-│   ├── favicon.svg          # Site Favicon
-│   └── photos/               # Project screenshots & media assets
-├── src/
-│   ├── components/          # Modular React components
-│   │   ├── Navbar.tsx             # Header with navigation & quick actions
-│   │   ├── Hero.tsx               # Main hero section & call-to-action
-│   │   ├── ParticleCanvas.tsx     # Canvas particle physics engine
-│   │   ├── AsciiHeroTerminal.tsx  # ASCII terminal header overlay
-│   │   ├── Terminal.tsx           # Interactive CLI terminal component
-│   │   ├── CommandPalette.tsx     # Global modal palette (⌘K)
-│   │   ├── ProjectsBento.tsx      # Project bento grid
-│   │   ├── ProjectCaseStudy.tsx   # Detailed project case study modal
-│   │   ├── AllProjectsModal.tsx   # Filterable all-projects showcase
-│   │   ├── LightboxModal.tsx      # Fullscreen screenshot lightbox viewer
-│   │   ├── SkillsMatrix.tsx       # Tech stack grid
-│   │   ├── Timeline.tsx           # Interactive career/education timeline
-│   │   ├── ResumeModal.tsx        # In-app PDF resume modal
-│   │   ├── Contact.tsx            # Contact form & social links
-│   │   ├── ScrollProgressBar.tsx  # Dynamic scroll indicator
-│   │   └── Footer.tsx             # Site footer & copyright
-│   ├── data/
-│   │   └── config.ts        # Centralized configuration & portfolio data
-│   ├── App.tsx              # Main application root
-│   ├── main.tsx             # Entry point
-│   └── index.css            # Global CSS styles & design tokens
-├── index.html               # Main HTML document & SEO meta tags
-├── package.json             # Dependencies & scripts
-├── tailwind.config.js       # Tailwind CSS design system config
-├── tsconfig.json            # TypeScript configuration
-└── vite.config.ts           # Vite build system config
-```
 
 ---
 
@@ -73,15 +45,15 @@
 
 ### Prerequisites
 
-- Node.js (v18.0.0 or higher recommended)
-- npm or yarn
+- **Node.js**: `v18.0.0` or higher recommended
+- **Package Manager**: `npm` (v9+) or `yarn`
 
 ### Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/bitwise-adi/bitwise-adi.dev.git
-   cd bitwise-adi.dev
+   git clone https://github.com/bitwise-adi/DeveCanva.git
+   cd DeveCanva
    ```
 
 2. **Install dependencies:**
@@ -89,17 +61,17 @@
    npm install
    ```
 
-3. **Start the local development server:**
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
-   Open `http://localhost:5173` in your browser.
+   Open `http://localhost:5173` or `http://localhost:5174` in your browser.
 
 4. **Build for production:**
    ```bash
    npm run build
    ```
-   The compiled static assets will be output to the `dist/` folder.
+   Compiled production assets will be output to the `dist/` directory.
 
 5. **Preview production build locally:**
    ```bash
@@ -108,17 +80,79 @@
 
 ---
 
-## ⚙️ Customization
+## 🚢 Deployment Guide
 
-All portfolio content (personal details, projects, skills, timeline events, and terminal commands) is driven by [`src/data/config.ts`](file:///home/adityar/OP/Final%20Canvas/src/data/config.ts).
+This repository is optimized for zero-config static site deployment on Vercel, Netlify, Cloudflare Pages, or GitHub Pages.
 
-To update your own info:
-1. Edit `src/data/config.ts` with your profile details, links, and projects.
-2. Replace static images in `public/photos/` and your PDF resume at `public/Aditya_Raj_Resume.pdf`.
-3. Update title, description, and meta tags in `index.html`.
+### Deploying to Vercel (Recommended)
+
+1. Import the repository [`bitwise-adi/DeveCanva`](https://github.com/bitwise-adi/DeveCanva) on [Vercel](https://vercel.com/).
+2. Framework Preset: **Vite**
+3. Build Command: `npm run build`
+4. Output Directory: `dist`
+5. Click **Deploy**.
+
+### Deploying to Netlify
+
+1. Connect your GitHub repository on [Netlify](https://www.netlify.com/).
+2. Set Build Settings:
+   - **Build Command**: `npm run build`
+   - **Publish directory**: `dist`
+3. Click **Deploy site**.
+
+---
+
+## 📁 Project Structure
+
+```text
+├── public/                     # Static assets served at root
+│   ├── Aditya_Raj_Resume.pdf   # Formal PDF Resume
+│   ├── favicon.svg             # SVG Monogram Favicon
+│   ├── 404.html                # Custom Glassmorphism 404 Page
+│   └── photos/                 # Project screenshots & OG social cards
+├── src/
+│   ├── components/             # Modular React components
+│   │   ├── Navbar.tsx          # Responsive Header & Mobile Navigation Drawer
+│   │   ├── Hero.tsx            # Main hero section & typewriter subheadline
+│   │   ├── ParticleCanvas.tsx  # Canvas particle physics engine with mobile throttling
+│   │   ├── AsciiHeroTerminal.tsx # Interactive ASCII terminal header overlay
+│   │   ├── Terminal.tsx        # Interactive CLI terminal state machine
+│   │   ├── CommandPalette.tsx  # Global modal palette (⌘K & / shortcuts)
+│   │   ├── ProjectsBento.tsx   # Featured projects grid
+│   │   ├── ProjectCaseStudy.tsx# Detailed project case study router
+│   │   ├── ProjectsArchive.tsx # Searchable & filterable all-projects showcase
+│   │   ├── LightboxModal.tsx   # Fullscreen screenshot lightbox viewer
+│   │   ├── SkillsMatrix.tsx    # Categorized tech stack & project proofs
+│   │   ├── Timeline.tsx        # Interactive career & education timeline
+│   │   ├── ResumeModal.tsx     # In-app PDF resume viewer
+│   │   ├── Contact.tsx       # Contact form & availability status card
+│   │   ├── ScrollProgressBar.tsx # Dynamic scroll indicator
+│   │   └── Footer.tsx          # Site footer, shortcut hints & sitemap
+│   ├── data/
+│   │   └── config.ts           # Centralized configuration & portfolio data
+│   ├── App.tsx                 # App root, code-splitting & AnimatePresence
+│   ├── main.tsx                # Application entry point
+│   └── index.css               # Design tokens & glassmorphism utilities
+├── index.html                  # HTML5 document, loading splash & SEO meta tags
+├── package.json                # Dependencies & scripts
+├── tailwind.config.js          # Tailwind design system configuration
+├── tsconfig.json               # TypeScript compiler config
+└── vite.config.ts              # Vite build system configuration
+```
+
+---
+
+## ⚙️ Customization & Data Setup
+
+All portfolio content (personal info, projects, skills, timeline, and terminal commands) is driven by [`src/data/config.ts`](file:///home/adityar/OP/Final%20Canvas/src/data/config.ts).
+
+To update profile details:
+1. Modify [`src/data/config.ts`](file:///home/adityar/OP/Final%20Canvas/src/data/config.ts) with your name, contact info, skills, and project list.
+2. Replace PDF resume at `public/Aditya_Raj_Resume.pdf` and static images in `public/photos/`.
+3. Update metadata, title, and Open Graph tags in `index.html`.
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+Distributed under the [MIT License](LICENSE).
