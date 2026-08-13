@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | bitwise-adi</title>
+    <meta name="theme-color" content="#07070d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background-color: #07070d;
+        color: #e8e8ed;
+        font-family: 'Inter', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        overflow: hidden;
+      }
+      .card {
+        background: rgba(14, 14, 26, 0.75);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 48px 36px;
+        max-width: 480px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+      .code {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 72px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #00ffcc, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 8px;
+        letter-spacing: -2px;
+      }
+      .tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #00ffcc;
+        background: rgba(0, 255, 204, 0.1);
+        border: 1px solid rgba(0, 255, 204, 0.25);
+        padding: 4px 12px;
+        border-radius: 9999px;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+      p { font-size: 14px; color: #9a9ab0; line-height: 1.6; margin-bottom: 32px; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        color: #fff;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 25px rgba(139, 92, 246, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="code">404</div>
+      <div class="tag">Error // Route Not Found</div>
+      <h1>Lost in Cyberspace?</h1>
+      <p>The page or project record you are searching for does not exist or has been relocated.</p>
+      <a href="/" class="btn">&larr; Return to Portfolio</a>
+    </div>
+  </body>
+</html>

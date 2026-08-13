@@ -34,9 +34,9 @@
 
 ```text
 ├── public/                  # Static assets served at root
-│   ├── MeRes.pdf            # PDF Resume
+│   ├── Aditya_Raj_Resume.pdf   # PDF Resume
 │   ├── favicon.svg          # Site Favicon
-│   └── phtos/               # Project screenshots & media assets
+│   └── photos/               # Project screenshots & media assets
 ├── src/
 │   ├── components/          # Modular React components
 │   │   ├── Navbar.tsx             # Header with navigation & quick actions
@@ -114,7 +114,7 @@ All portfolio content (personal details, projects, skills, timeline events, and 
 
 To update your own info:
 1. Edit `src/data/config.ts` with your profile details, links, and projects.
-2. Replace static images in `public/phtos/` and your PDF resume at `public/MeRes.pdf`.
+2. Replace static images in `public/photos/` and your PDF resume at `public/Aditya_Raj_Resume.pdf`.
 3. Update title, description, and meta tags in `index.html`.
 
 ---

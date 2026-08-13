@@ -52,6 +52,9 @@ Thumbs.db
 .stylelintcache
 .cache/
 
-# Agent / Local Temp Directories
+# Agent / Local Temp Directories & Internal Documentation
 .gemini/
 scratch/
+Guide/
+BITWISE_ADI_GITHUB_SUMMARY.md
+

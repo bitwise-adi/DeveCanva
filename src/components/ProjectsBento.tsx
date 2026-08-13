@@ -23,9 +23,7 @@ export const ProjectsBento: React.FC<ProjectsBentoProps> = ({
   };
 
   // Featured projects displayed on home section
-  const featuredProjects = CONFIG.projects.filter(
-    (p) => p.id === 'locome' || p.id === 'gradebuddy'
-  );
+  const featuredProjects = CONFIG.projects.filter((p) => p.spotlight);
 
   return (
     <section id="projects" className="py-24 relative z-10">

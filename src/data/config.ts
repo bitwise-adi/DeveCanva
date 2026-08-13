@@ -80,8 +80,8 @@ export const CONFIG: Config = {
     email: "reachadiofficial@gmail.com",
     github: "https://github.com/bitwise-adi",
     linkedin: "https://linkedin.com/in/bitwise-adi",
-    resumePath: "/MeRes.pdf",
-    avatarPath: "/phtos/mypic.jpg",
+    resumePath: "/Aditya_Raj_Resume.pdf",
+    avatarPath: "/photos/mypic.jpg",
     bio: "Developer & builder. I leverage modern AI workflows and engineering discipline to architect, build, and ship high-impact products at high velocity.",
     aboutBio: "I leverage modern AI workflows and engineering discipline to architect, build, and ship products at high velocity.\n\nI'm drawn to projects that sit at the intersection of practical utility and technical curiosity — whether that's scraping a university portal to plan semester exam strategies, building encrypted real-time systems, or deploying ML threat classifiers. I like building things that solve real problems, combining strong engineering fundamentals with modern velocity to go from idea to production with speed and precision.",
     location: "Mysore, India",
@@ -248,21 +248,21 @@ export const CONFIG: Config = {
       tech: ["TypeScript", "Next.js", "Firebase", "PWA", "Tailwind CSS"],
       liveUrl: "https://locome.bitwise-adi.dev",
       githubUrl: "https://github.com/bitwise-adi/LocoMe",
-      image: "/phtos/locome/01_landing.png",
+      image: "/photos/locome/01_landing.png",
       screenshots: [
-        "/phtos/locome/01_landing.png",
-        "/phtos/locome/02_habits_created.png",
-        "/phtos/locome/03_august_entries.png",
-        "/phtos/locome/04_tasks_tab.png",
-        "/phtos/locome/05_settings_page.png",
-        "/phtos/locome/06_shared_page.png",
+        "/photos/locome/01_landing.png",
+        "/photos/locome/02_habits_created.png",
+        "/photos/locome/03_august_entries.png",
+        "/photos/locome/04_tasks_tab.png",
+        "/photos/locome/05_settings_page.png",
+        "/photos/locome/06_shared_page.png",
       ],
     },
     {
       id: "gradebuddy",
       name: "GradeBuddy",
       category: "Web & Tools",
-      spotlight: false,
+      spotlight: true,
       subtitle: "NIE Parent Portal Scraper & Exam Strategy Dashboard",
       description: "Scrapes the NIE parent portal and provides a dashboard with an SGPA planner to strategize your semester-end exams.",
       problem: "Students at NIE Mysore faced fragmented parent portal interfaces that made calculating current GPA trends and target marks required for specific semester-end SGPA goals tedious and prone to manual error.",
@@ -281,9 +281,9 @@ export const CONFIG: Config = {
       tech: ["TypeScript", "React", "Puppeteer", "Docker", "Node.js"],
       liveUrl: "https://gradebuddy.bitwise-adi.dev",
       githubUrl: "https://github.com/bitwise-adi/GradeBuddy",
-      image: "/phtos/projects/gradebuddy_desktop.png",
+      image: "/photos/projects/gradebuddy_desktop.png",
       screenshots: [
-        "/phtos/projects/gradebuddy_desktop.png"
+        "/photos/projects/gradebuddy_desktop.png"
       ],
     },
     {
@@ -361,10 +361,36 @@ export const CONFIG: Config = {
       tech: ["JavaScript", "HTML5", "CSS3", "LocalStorage"],
       liveUrl: "https://bitwise-adi.github.io/BuildFolio/",
       githubUrl: "https://github.com/bitwise-adi/BuildFolio",
-      image: "/phtos/projects/buildfolio_populated.png",
+      image: "/photos/projects/buildfolio_populated.png",
       screenshots: [
-        "/phtos/projects/buildfolio_populated.png"
+        "/photos/projects/buildfolio_populated.png"
       ],
+    },
+    {
+      id: "devcanvas",
+      name: "DevCanvas",
+      category: "Web & Tools",
+      spotlight: false,
+      subtitle: "High-Velocity Glassmorphism Developer Canvas & Interactive Portfolio",
+      description: "An interactive, high-performance developer canvas and portfolio featuring an integrated command palette (⌘K), real-time interactive terminal state machine, ASCII hero renderer, and case study router.",
+      problem: "Standard developer portfolio templates are often static, generic, and fail to demonstrate real engineering discipline, reactive UI state machines, interactive command-line interfaces, or high-velocity delivery.",
+      solution: "Engineered a custom glassmorphism web platform using React 18, TypeScript, and Framer Motion. Built a fully interactive terminal CLI with command parsing, an accessible ⌘K command palette, smooth route code-splitting, and glassmorphism design tokens.",
+      highlights: [
+        "Interactive Terminal state machine with custom CLI commands & ASCII art rendering",
+        "Command Palette (⌘K) & keyboard shortcut navigation system",
+        "Config-driven architecture with React 18, TypeScript, & Framer Motion",
+        "Code-split SPA routing with AnimatePresence page view transitions"
+      ],
+      metrics: [
+        { label: "Architecture", value: "React 18 + TS" },
+        { label: "Design System", value: "Glassmorphism" },
+        { label: "Bundle Load", value: "< 120KB Gzip" }
+      ],
+      tech: ["TypeScript", "React 18", "Framer Motion", "Tailwind CSS", "Vite"],
+      liveUrl: "https://www.bitwise-adi.dev",
+      githubUrl: "https://github.com/bitwise-adi/DeveCanva",
+      image: null,
+      screenshots: [],
     },
   ],
 

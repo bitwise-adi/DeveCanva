@@ -26,7 +26,7 @@ export const ParticleCanvas: React.FC<ParticleCanvasProps> = ({ isDark = true })
 
     const dotColor = isDark ? 'rgba(0, 255, 204, ' : 'rgba(0, 184, 148, ';
     const lineColor = isDark ? 'rgba(0, 255, 204, 0.04)' : 'rgba(0, 184, 148, 0.035)';
-    const particleCount = Math.min(60, Math.floor(w / 25));
+    const particleCount = w < 768 ? Math.min(22, Math.floor(w / 35)) : Math.min(60, Math.floor(w / 25));
     const connectionDist = 140;
 
     const particles = Array.from({ length: particleCount }, () => ({

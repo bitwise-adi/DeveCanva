@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -8,13 +9,14 @@ import { ProjectsBento } from './components/ProjectsBento';
 import { Terminal } from './components/Terminal';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ProjectsArchive } from './components/ProjectsArchive';
-import { ProjectCaseStudy } from './components/ProjectCaseStudy';
 import { ResumeModal } from './components/ResumeModal';
 import { ParticleCanvas } from './components/ParticleCanvas';
 import { LightboxModal } from './components/LightboxModal';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { CommandPalette } from './components/CommandPalette';
+
+const ProjectsArchive = lazy(() => import('./components/ProjectsArchive').then(m => ({ default: m.ProjectsArchive })));
+const ProjectCaseStudy = lazy(() => import('./components/ProjectCaseStudy').then(m => ({ default: m.ProjectCaseStudy })));
 
 export const App: React.FC = () => {
   const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
@@ -117,34 +119,62 @@ export const App: React.FC = () => {
 
       {/* Main View Router */}
       <main>
-        {currentView === 'home' && (
-          <>
-            <Hero onOpenResume={() => setIsResumeOpen(true)} />
-            <About onOpenLightbox={handleOpenLightbox} />
-            <Timeline />
-            <SkillsMatrix />
-            <ProjectsBento
-              onNavigateToProjectsArchive={navigateToProjectsArchive}
-              onSelectCaseStudy={navigateToCaseStudy}
-              onOpenLightbox={handleOpenLightbox}
-            />
-            <Terminal onOpenResume={() => setIsResumeOpen(true)} />
-            <Contact onOpenResume={() => setIsResumeOpen(true)} />
-          </>
-        )}
+        <AnimatePresence mode="wait">
+          {currentView === 'home' && (
+            <motion.div
+              key="home"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Hero onOpenResume={() => setIsResumeOpen(true)} />
+              <About onOpenLightbox={handleOpenLightbox} />
+              <Timeline />
+              <SkillsMatrix />
+              <ProjectsBento
+                onNavigateToProjectsArchive={navigateToProjectsArchive}
+                onSelectCaseStudy={navigateToCaseStudy}
+                onOpenLightbox={handleOpenLightbox}
+              />
+              <Terminal onOpenResume={() => setIsResumeOpen(true)} />
+              <Contact onOpenResume={() => setIsResumeOpen(true)} />
+            </motion.div>
+          )}
 
-        {currentView === 'projects' && (
-          <ProjectsArchive onSelectCaseStudy={navigateToCaseStudy} />
-        )}
+          {currentView === 'projects' && (
+            <motion.div
+              key="projects"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Suspense fallback={<div className="min-h-screen pt-32 text-center font-mono text-xs text-[#00ffcc]">Loading archive...</div>}>
+                <ProjectsArchive onSelectCaseStudy={navigateToCaseStudy} />
+              </Suspense>
+            </motion.div>
+          )}
 
-        {currentView === 'case-study' && (
-          <ProjectCaseStudy
-            projectId={activeCaseStudyId}
-            onNavigateToProjects={navigateToProjectsArchive}
-            onNavigateToCaseStudy={navigateToCaseStudy}
-            onOpenLightbox={handleOpenLightbox}
-          />
-        )}
+          {currentView === 'case-study' && (
+            <motion.div
+              key={`case-study-${activeCaseStudyId}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Suspense fallback={<div className="min-h-screen pt-32 text-center font-mono text-xs text-[#00ffcc]">Loading case study...</div>}>
+                <ProjectCaseStudy
+                  projectId={activeCaseStudyId}
+                  onNavigateToProjects={navigateToProjectsArchive}
+                  onNavigateToCaseStudy={navigateToCaseStudy}
+                  onOpenLightbox={handleOpenLightbox}
+                />
+              </Suspense>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
 
       {/* Footer */}

@@ -80,12 +80,11 @@ export const Terminal: React.FC<TerminalProps> = ({ onOpenResume }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-slate-300 pl-2">
               <div><span className="text-[#00ffcc] font-bold">help</span> — Show command menu</div>
               <div><span className="text-[#00ffcc] font-bold">whoami</span> — Developer biography</div>
-              <div><span className="text-[#00ffcc] font-bold">projects</span> — List featured projects</div>
+              <div><span className="text-[#00ffcc] font-bold">projects / ls</span> — List projects</div>
+              <div><span className="text-[#00ffcc] font-bold">experience</span> — View academic & career timeline</div>
               <div><span className="text-[#00ffcc] font-bold">skills</span> — View engineering stack</div>
-              <div><span className="text-[#00ffcc] font-bold">socials</span> — GitHub, LinkedIn, Email</div>
-              <div><span className="text-[#00ffcc] font-bold">contact</span> — Reach out directly</div>
-              <div><span className="text-[#00ffcc] font-bold">resume</span> — Open PDF resume</div>
-              <div><span className="text-[#00ffcc] font-bold">github</span> — Jump to GitHub profile</div>
+              <div><span className="text-[#00ffcc] font-bold">socials / contact</span> — Reach out directly</div>
+              <div><span className="text-[#00ffcc] font-bold">resume / cat</span> — Open PDF resume</div>
               <div><span className="text-[#00ffcc] font-bold">neofetch</span> — System & build info</div>
               <div><span className="text-[#00ffcc] font-bold">clear</span> — Clear terminal output</div>
               <div><span className="text-[#00ffcc] font-bold">sudo hire-me</span> — Unlock availability 🚀</div>
@@ -186,6 +185,44 @@ export const Terminal: React.FC<TerminalProps> = ({ onOpenResume }) => {
         setOutputs([]);
         break;
 
+      case 'experience':
+      case 'timeline':
+        addLine(
+          <div className="py-1 space-y-2 font-mono text-xs">
+            <div className="text-[#00ffcc] font-bold">Academic & Career Milestones:</div>
+            {CONFIG.timeline.map((item) => (
+              <div key={item.id} className="pl-2 border-l border-white/10">
+                <div className="text-[#00ffcc] font-bold">{item.year} — {item.title}</div>
+                <div className="text-[#a78bfa]">{item.institution} ({item.location})</div>
+                <div className="text-slate-300">Grade/Score: <span className="text-[#00ffcc] font-semibold">{item.score}</span> | {item.boardOrDegree}</div>
+              </div>
+            ))}
+          </div>
+        );
+        break;
+
+      case 'cat':
+        if (args.includes('resume')) {
+          addLine(<span className="text-[#00ffcc]">Executing cat resume.pdf → Opening resume viewer...</span>);
+          onOpenResume();
+        } else {
+          addLine(<span className="text-[#6a6a82]">cat: specify file (e.g. "cat resume.pdf")</span>);
+        }
+        break;
+
+      case 'ls':
+        addLine(
+          <div className="py-1 font-mono text-xs text-[#00ffcc] space-y-1 pl-2">
+            <div className="text-[#9a9ab0]">drwxr-xr-x  projects/</div>
+            {CONFIG.projects.map((p) => (
+              <div key={p.id} className="pl-4 text-slate-300">
+                - {p.name.toLowerCase()} <span className="text-[#6a6a82]">({p.category})</span>
+              </div>
+            ))}
+          </div>
+        );
+        break;
+
       case 'sudo':
         if (args === 'hire-me' || args === 'hire') {
           addLine(
@@ -264,9 +301,10 @@ export const Terminal: React.FC<TerminalProps> = ({ onOpenResume }) => {
               <span className="w-3 h-3 rounded-full bg-[#ff5f57] inline-block shadow-sm" />
               <span className="w-3 h-3 rounded-full bg-[#febc2e] inline-block shadow-sm" />
               <span className="w-3 h-3 rounded-full bg-[#28c840] inline-block shadow-sm" />
-              <span className="font-mono text-xs text-[#9a9ab0] ml-3 flex items-center gap-1.5">
-                <TerminalIcon className="w-3.5 h-3.5 text-[#00ffcc]" />
-                bash — bitwise-adi@portfolio:~
+              <span className="font-mono text-xs text-[#9a9ab0] ml-2 flex items-center gap-1.5 min-w-0 truncate">
+                <TerminalIcon className="w-3.5 h-3.5 text-[#00ffcc] shrink-0" />
+                <span className="hidden sm:inline">bash — bitwise-adi@portfolio:~</span>
+                <span className="sm:hidden">bash — adi@dev:~</span>
               </span>
             </div>
 
@@ -310,8 +348,9 @@ export const Terminal: React.FC<TerminalProps> = ({ onOpenResume }) => {
             onClick={() => inputRef.current?.focus()}
             className="flex items-center gap-2.5 px-4 sm:px-6 py-3 border-t border-white/10 bg-[#070811] cursor-text"
           >
-            <span className="text-[#a78bfa] font-bold font-mono text-xs sm:text-sm flex-shrink-0">
-              bitwise-adi@dev:~$
+            <span className="text-[#a78bfa] font-bold font-mono text-xs sm:text-sm shrink-0">
+              <span className="hidden sm:inline">bitwise-adi@dev:~$</span>
+              <span className="sm:hidden">adi@dev:~$</span>
             </span>
             <input
               ref={inputRef}
@@ -319,8 +358,8 @@ export const Terminal: React.FC<TerminalProps> = ({ onOpenResume }) => {
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder='Type a command (e.g. "help", "projects", "sudo hire")...'
-              className="flex-1 bg-transparent text-white outline-none border-none font-mono text-xs sm:text-sm placeholder:text-[#52526c]"
+              placeholder='Type a command (e.g. "help")...'
+              className="flex-1 min-w-0 bg-transparent text-white outline-none border-none font-mono text-xs sm:text-sm placeholder:text-[#52526c]"
               autoComplete="off"
               spellCheck="false"
             />

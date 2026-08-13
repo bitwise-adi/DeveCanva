@@ -26,7 +26,7 @@ export const SkillsMatrix: React.FC = () => {
         >
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4" />
-            <span>03 // Skills & Proof Matrix</span>
+            <span>Skills & Proof Matrix</span>
           </div>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-[#00ffcc]/30 to-transparent" />
         </motion.div>

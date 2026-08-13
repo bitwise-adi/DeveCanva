@@ -21,7 +21,7 @@ export const About: React.FC<AboutProps> = ({ onOpenLightbox }) => {
         >
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4" />
-            <span>01 // About Me</span>
+            <span>About Me</span>
           </div>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-[#00ffcc]/30 to-transparent" />
         </motion.div>
@@ -158,18 +158,24 @@ export const About: React.FC<AboutProps> = ({ onOpenLightbox }) => {
             {CONFIG.stats.map((s, idx) => (
               <motion.div
                 key={s.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="glass-panel p-6 rounded-2xl flex flex-col justify-center items-center text-center relative overflow-hidden group border border-white/5 hover:border-[#00ffcc]/30 transition-all"
+                transition={{ duration: 0.5, delay: idx * 0.12, type: 'spring', stiffness: 300, damping: 20 }}
+                whileHover={{ y: -6, scale: 1.03 }}
+                className="glass-panel p-6 rounded-2xl flex flex-col justify-center items-center text-center relative overflow-hidden group border border-white/5 hover:border-[#00ffcc]/40 transition-all shadow-lg"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00ffcc]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="font-mono text-3xl md:text-4xl font-bold text-[#00ffcc] relative z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00ffcc]/15 via-[#8b5cf6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <motion.div
+                  initial={{ scale: 0.8 }}
+                  whileInView={{ scale: [0.8, 1.1, 1] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.12 + 0.2 }}
+                  className="font-mono text-3xl md:text-4xl font-bold text-[#00ffcc] relative z-10 drop-shadow-[0_0_12px_rgba(0,255,204,0.3)]"
+                >
                   {s.value}
-                </div>
-                <div className="text-xs text-[#6a6a82] mt-2 relative z-10 font-medium">
+                </motion.div>
+                <div className="text-xs text-[#6a6a82] mt-2 relative z-10 font-medium tracking-wide">
                   {s.label}
                 </div>
               </motion.div>
