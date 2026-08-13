@@ -14,11 +14,13 @@ import { ParticleCanvas } from './components/ParticleCanvas';
 import { LightboxModal } from './components/LightboxModal';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { CommandPalette } from './components/CommandPalette';
+import { SplashLoader } from './components/SplashLoader';
 
 const ProjectsArchive = lazy(() => import('./components/ProjectsArchive').then(m => ({ default: m.ProjectsArchive })));
 const ProjectCaseStudy = lazy(() => import('./components/ProjectCaseStudy').then(m => ({ default: m.ProjectCaseStudy })));
 
 export const App: React.FC = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState<boolean>(false);
 
@@ -203,6 +205,13 @@ export const App: React.FC = () => {
         currentIndex={lightboxIndex}
         onNavigate={setLightboxIndex}
       />
+
+      {/* Initial Splash Screen Loader */}
+      <AnimatePresence>
+        {isLoading && (
+          <SplashLoader onFinish={() => setIsLoading(false)} durationMs={1800} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
