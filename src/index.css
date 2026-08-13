@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #07070d;
+    --bg-secondary: #0e0e18;
+    --bg-tertiary: #141422;
+    --bg-card: rgba(14, 14, 26, 0.65);
+    --bg-card-hover: rgba(20, 20, 40, 0.85);
+
+    --text-primary: #e8e8ed;
+    --text-secondary: #9a9ab0;
+    --text-tertiary: #6a6a82;
+
+    --accent-1: #00ffcc;
+    --accent-2: #8b5cf6;
+    --accent-3: #3b82f6;
+
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --border-accent: rgba(0, 255, 204, 0.25);
+
+    --glass-bg: rgba(14, 14, 26, 0.65);
+    --glass-blur: 24px;
+  }
+
+  .light {
+    --bg-primary: #f5f5f8;
+    --bg-secondary: #eeeef2;
+    --bg-tertiary: #e4e4eb;
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card-hover: rgba(255, 255, 255, 0.95);
+
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a68;
+    --text-tertiary: #7a7a96;
+
+    --accent-1: #00b894;
+    --accent-2: #6c5ce7;
+    --accent-3: #2d6cdf;
+
+    --border: rgba(0, 0, 0, 0.07);
+    --border-hover: rgba(0, 0, 0, 0.14);
+    --border-accent: rgba(0, 184, 148, 0.3);
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-blur: 20px;
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom Glassmorphism */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-hover);
+}
+
+/* Spotlight glow pseudoelement effect */
+.spotlight-card {
+  position: relative;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--card-glow, rgba(0, 255, 204, 0.08)),
+    transparent 40%
+  );
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Accessibility & Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 2px;
+}
+
+
