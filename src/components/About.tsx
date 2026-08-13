@@ -79,8 +79,8 @@ export const About: React.FC<AboutProps> = ({ onOpenLightbox }) => {
 
             {/* Quick Status Tag line below image */}
             <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-[#6a6a82]">
-              <span>Role: Builder & Dev</span>
-              <span className="text-[#00ffcc]">Full-Stack / ML</span>
+              <span>Role: FSD</span>
+              <span className="text-[#00ffcc]">SWE — Web Systems</span>
             </div>
           </motion.div>
 
