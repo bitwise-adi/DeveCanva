@@ -4,8 +4,7 @@
   <p>Built with Next.js (App Router), Vanilla CSS, Framer Motion, and MDX.</p>
 
   <p>
-    <a href="https://bitwise-adi.dev"><strong>View Live Site »</strong></a>
-    &nbsp;•&nbsp;
+    
     <a href="#-features">Features</a>
     &nbsp;•&nbsp;
     <a href="#-project-structure">Structure</a>
