@@ -390,8 +390,10 @@ export const CONFIG: Config = {
       tech: ["TypeScript", "React 18", "Framer Motion", "Tailwind CSS", "Vite"],
       liveUrl: "https://www.bitwise-adi.dev",
       githubUrl: "https://github.com/bitwise-adi/DeveCanva",
-      image: null,
-      screenshots: [],
+      image: "/photos/og-card.png",
+      screenshots: [
+        "/photos/og-card.png"
+      ],
     },
   ],
 

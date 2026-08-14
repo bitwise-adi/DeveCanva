@@ -4,6 +4,10 @@
 [![GitHub Repository](https://img.shields.io/badge/GitHub-bitwise--adi%2FDeveCanva-8b5cf6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bitwise-adi/DeveCanva)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
+<p align="center">
+  <img src="public/photos/og-card.png" alt="DevCanvas Social Card Banner" width="100%" />
+</p>
+
 > High-velocity, cyberpunk-inspired developer portfolio and interactive canvas built with **React 18**, **TypeScript**, **Vite 6**, **Tailwind CSS**, and **Framer Motion**. Featuring interactive particle physics, an embedded CLI terminal state machine, a global command palette (`⌘K`), dynamic project case studies, and smooth micro-animations.
 
 ---
