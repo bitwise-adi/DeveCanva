@@ -21,7 +21,7 @@
 - 💻 **Interactive CLI Terminal State Machine**: Full terminal experience with custom CLI commands: `help`, `whoami`, `projects` / `ls`, `experience`, `skills`, `socials`, `contact`, `resume` / `cat resume.pdf`, `neofetch`, `clear`, and `sudo hire-me`.
 - ⌘ **Global Command Palette (`⌘K`)**: Instant modal navigation accessible anywhere on the site with keyboard shortcut listeners (`⌘K` and `/`).
 - 📦 **Bento Grid & Case Study SPA Router**: Filterable project showcase featuring live demo links, modal case studies, and image lightbox galleries with `AnimatePresence` view crossfades.
-- 🛠️ **Skills & Proof Matrix**: Categorized tech stack matrix linking every listed technology directly to shipped project proofs (`LocoMe`, `GradeBuddy`, `RansomGuard.ai`, `NOVA`, `BuildFolio`, `DevCanvas`).
+- 🛠️ **Skills & Proof Matrix**: Categorized tech stack matrix linking every listed technology directly to shipped project proofs (`Tsugi(t)`, `GradeBuddy`, `RansomGuard.ai`, `NOVA`, `BuildFolio`, `DevCanvas`).
 - 📄 **In-Browser PDF Resume Viewer**: Interactive PDF viewer modal with instant download capabilities (`Aditya_Raj_Resume.pdf`).
 - 🎨 **Glassmorphism & Design Token System**: Dark background (`#07070d`), vibrant cyan accents (`#00ffcc`), purple glow gradients (`#8b5cf6`), and high-performance Tailwind utility classes.
 - ⚡ **Performance & SEO Optimized**: Pre-rendered inline HTML splash spinner, custom SVG Open Graph social preview card (`og-card.svg`), and `React.lazy()` route code-splitting for fast page loads.

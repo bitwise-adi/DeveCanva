@@ -232,7 +232,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             <input
               type="text"
               autoFocus
-              placeholder="Type a command or search sections... (e.g. LocoMe, Skills, Resume)"
+              placeholder="Type a command or search sections... (e.g. Tsugi(t), Skills, Resume)"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDownInInput}

@@ -107,14 +107,14 @@ export const CONFIG: Config = {
     {
       name: "TypeScript",
       category: "Frontend & Core",
-      proof: "LocoMe • GradeBuddy • DevCanvas",
+      proof: "Tsugi(t) • GradeBuddy • DevCanvas",
       desc: "Primary language for type-safe web applications & UI components",
       highlight: true
     },
     {
       name: "Next.js 15/16",
       category: "Frontend & Core",
-      proof: "LocoMe • GradeBuddy",
+      proof: "Tsugi(t) • GradeBuddy",
       desc: "App Router, SSR, static generation & route handlers",
       highlight: true
     },
@@ -147,20 +147,20 @@ export const CONFIG: Config = {
     {
       name: "Dexie.js (IndexedDB)",
       category: "Backend & Storage",
-      proof: "LocoMe (Local-First UX)",
+      proof: "Tsugi(t) (Local-First UX)",
       desc: "Client-side offline database with zero latency persistence",
       highlight: true
     },
     {
       name: "Firebase & Firestore",
       category: "Backend & Storage",
-      proof: "LocoMe (Cloud Sync)",
+      proof: "Tsugi(t) (Cloud Sync)",
       desc: "Real-time database multi-device cloud synchronization"
     },
     {
       name: "Node.js & FastAPI",
       category: "Backend & Storage",
-      proof: "LocoMe • ranDetect",
+      proof: "Tsugi(t) • ranDetect",
       desc: "Serverless functions, scraping scripts & REST APIs"
     },
 
@@ -212,7 +212,7 @@ export const CONFIG: Config = {
     {
       name: "Vercel & Render",
       category: "DevOps & Tooling",
-      proof: "LocoMe • GradeBuddy Deploys",
+      proof: "Tsugi(t) • GradeBuddy Deploys",
       desc: "Production cloud hosting & edge network deployments"
     }
   ],
@@ -226,28 +226,29 @@ export const CONFIG: Config = {
 
   projects: [
     {
-      id: "locome",
-      name: "LocoMe",
+      id: "tsugit",
+      name: "Tsugi(t)",
       category: "PWA",
       spotlight: true,
-      subtitle: "Progressive Web App for Habit Tracking & Real-Time Sync",
-      description: "A Progressive Web App for habit tracking and task management with real-time Firebase sync, offline capabilities, streak retention engine, and theme customization.",
+      subtitle: "Local-First Habit Tracker & Task Management Progressive Web App",
+      description: "A Progressive Web App for habit tracking and task management built on the philosophy of continuous mending (Tsugi) as a function of time (t), featuring real-time Firebase sync, offline Dexie.js (IndexedDB) persistence, streak analytics, and theme customization.",
       problem: "Most habit tracking apps lock essential sync features behind expensive subscriptions or fail to retain user progress when offline, leading to broken habit streaks and fragmented tracking across devices.",
-      solution: "Engineered a cross-platform Progressive Web App (PWA) built with Next.js and TypeScript. Integrated Firebase Firestore for real-time multi-device database synchronization and implemented Service Worker caching for seamless offline habit entries with automated background sync.",
+      solution: "Engineered a local-first Progressive Web App (PWA) built with Next.js 16, React 19, and TypeScript. Integrated Dexie.js (IndexedDB) for zero-latency offline interactions and Firebase Firestore for real-time multi-device cloud synchronization with read-only habit share codes.",
       highlights: [
-        "Offline-first PWA architecture with Background Sync",
-        "Real-time Firestore multi-device synchronization engine",
-        "Algorithmic streak calculation & retention analytics",
-        "Customizable dark/light UI themes with glassmorphism design"
+        "Local-first architecture with Dexie.js (IndexedDB) for zero-latency offline logging",
+        "Real-time Firestore multi-device synchronization engine with last-write-wins merge",
+        "Algorithmic streak calculation, 16-week heatmap & retention analytics",
+        "Read-only habit sharing via 6-character claim codes & access-mirror security model",
+        "Customizable dark/light UI themes with 6 accent palettes & glassmorphism design"
       ],
       metrics: [
         { label: "Platform", value: "PWA / Web" },
         { label: "Sync Latency", value: "< 50ms" },
         { label: "Offline Mode", value: "100% Functional" }
       ],
-      tech: ["TypeScript", "Next.js", "Firebase", "PWA", "Tailwind CSS"],
-      liveUrl: "https://locome.bitwise-adi.dev",
-      githubUrl: "https://github.com/bitwise-adi/LocoMe",
+      tech: ["TypeScript", "Next.js 16", "React 19", "Dexie.js", "Firebase", "PWA", "Tailwind CSS"],
+      liveUrl: "https://tsugit.bitwise-adi.dev",
+      githubUrl: "https://github.com/bitwise-adi/Tsugi",
       image: "/photos/locome/01_landing.png",
       screenshots: [
         "/photos/locome/01_landing.png",

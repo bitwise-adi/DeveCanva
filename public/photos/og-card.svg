@@ -39,7 +39,7 @@
   <g transform="translate(90, 460)">
     <!-- Pill 1 -->
     <rect x="0" y="0" width="140" height="42" rx="21" fill="rgba(0,255,204,0.1)" stroke="rgba(0,255,204,0.3)" stroke-width="1"/>
-    <text x="70" y="26" font-family="monospace" font-size="14" font-weight="700" fill="#00ffcc" text-anchor="middle">LocoMe</text>
+    <text x="70" y="26" font-family="monospace" font-size="14" font-weight="700" fill="#00ffcc" text-anchor="middle">Tsugi(t)</text>
 
     <!-- Pill 2 -->
     <rect x="160" y="0" width="160" height="42" rx="21" fill="rgba(139,92,246,0.1)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>

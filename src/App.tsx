@@ -26,7 +26,7 @@ export const App: React.FC = () => {
 
   // In-App View Routing State
   const [currentView, setCurrentView] = useState<'home' | 'projects' | 'case-study'>('home');
-  const [activeCaseStudyId, setActiveCaseStudyId] = useState<string>('locome');
+  const [activeCaseStudyId, setActiveCaseStudyId] = useState<string>('tsugit');
 
   const [lightboxImages, setLightboxImages] = useState<string[]>([]);
   const [lightboxIndex, setLightboxIndex] = useState<number>(0);
@@ -44,7 +44,8 @@ export const App: React.FC = () => {
       const hash = window.location.hash;
       if (hash.startsWith('#/projects/')) {
         const id = hash.replace('#/projects/', '');
-        setActiveCaseStudyId(id);
+        const resolvedId = (id === 'locome' || id === 'tsugi') ? 'tsugit' : id;
+        setActiveCaseStudyId(resolvedId);
         setCurrentView('case-study');
       } else if (hash === '#/projects' || hash === '#projects-archive') {
         setCurrentView('projects');
